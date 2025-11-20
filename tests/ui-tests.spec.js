@@ -12,5 +12,15 @@ test('UI - Page title is correct', async ({ page }) => {
   await expect(page).toHaveTitle(/Github User - Starter/i);
 });
 
+test('UI - Input box has correct placeholder', async ({ page }) => {
+  await page.goto('https://gh-users-search.netlify.app/');
+  await expect(page.locator('input')).toHaveAttribute('placeholder', 'Enter GitHub username');
+});
+test('UI - Search button label is correct', async ({ page }) => {
+  await page.goto('https://gh-users-search.netlify.app/');
+  await expect(page.locator('button')).toHaveText(/Search/i);
+});
+
+
 
 
