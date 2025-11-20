@@ -5,6 +5,9 @@ test('Functional - valid user search shows profile', async ({ page }) => {
 
   await page.fill('input', 'octocat');
   await page.click('button');
+  await page.getByTitle('Welcome');
+  await page.getByPlaceholder('Enter Github User Name');
+
 
   await expect(page.getByText('octocat')).toBeVisible();
 });
